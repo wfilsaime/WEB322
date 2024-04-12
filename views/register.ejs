@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lego | Register</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <%- include('partials/navbar', {page: '/register' }) %>
+
+
+    <div class="container mx-auto p-4">
+
+        <div class="hero bg-base-200 rounded-lg p-6">
+            <div class="hero-content text-center">
+                <div class="max-w-md">
+                <h1 class="text-5xl font-bold">Register</h1>
+                <p class="py-6">Please provide your credentials below</p>
+                </div>
+            </div>
+
+        </div>
+
+        <br>
+
+         <%  if(!successMessage) {   %>
+        <form action="/register" method="post" enctype="application/x-www-form-urlencoded">
+            <div>
+                <label for="userName"  class="block text-gray-700 font-medium">User Name</label> 
+                <input type="text" required name="userName" id="userName" placeholder="User Name"
+                class="w-full border border-gray-300 rounded-md px-3 py-2 focus:border-blue-300">
+            </div>
+    
+            <br>
+            <div>
+                <label for="password"  class="block text-gray-700 font-medium">Password</label> 
+                <input type="password" required name="password" id="password" placeholder="Password"
+                class="w-full border border-gray-300 rounded-md px-3 py-2 focus:border-blue-300">
+            </div>
+
+            <br>
+            <div>
+                <label for="password2"  class="block text-gray-700 font-medium">Confirm Password</label> 
+                <input type="password" required name="password2" id="password2" placeholder="Confirm Password"
+                class="w-full border border-gray-300 rounded-md px-3 py-2 focus:border-blue-300">
+            </div>
+
+            <br>
+
+            <div>
+                <label for="email"  class="block text-gray-700 font-medium">Email Address</label> 
+                <input type="email" required name="email" id="email" placeholder="Email Address"
+                class="w-full border border-gray-300 rounded-md px-3 py-2 focus:border-blue-300">
+            </div><br><br>
+    
+            <div>
+                <button type="submit" class="btn btn-primary"> Register </button>
+            </div>
+        </form>
+
+        <br><br>
+
+       <% if(errorMessage) { %>
+        <div class="alert alert-error">
+        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+         <span> <%= errorMessage %> </span>
+         </div>
+       <% } %> 
+
+       <%  } else { %>
+
+        <div class="alert">
+        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+         <span> <%= successMessage %> </span> 
+        </div>
+        
+         <br><br><br>
+         <a href="/login" class="btn btn-success">
+            Proceed to Login
+          </a>
+        <% } %>
+          
+          
+        
+        
+
+    </div>
+
+
+    <br><br><br><br>
+    <%- include('partials/footer') %>
+    
+</body>
+</html>
