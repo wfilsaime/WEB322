@@ -1,19 +1,3 @@
-/********************************************************************************
-*  WEB322 – Assignment 06
-* 
-*  I declare that this assignment is my own work in accordance with Seneca's
-*  Academic Integrity Policy:
-* 
-*  https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
-* 
-*  Name: Wilgard Fils-aime ____Student ID: 172-519-225__ Date: ______________
-*
-*  Published URL: https://difficult-colt-pajamas.cyclic.app
-*
-********************************************************************************/
-
-
-
 
 
 const authData = require('./modules/auth-service');//for authentication
